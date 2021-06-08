@@ -11,29 +11,55 @@ class User extends Model {
 User.init(
   { 
     id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.DECIMAL(16),
       primaryKey: true,
-      autoincrement: true,
+      autoIncrement: true,
+      allowNull: false
     },
-    userName: {
 
+    username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      len: [16],
     },
+  },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
         isEmail: true,
+        len: [32],
       },
     },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [32],
       },
     },
+
+    create_time: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+
+    post_id1: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      autoIncrement: true,
+    },
+
+    comment_id1: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      autoIncrement: true,
+    },
+
   },
   {
     hooks: {
