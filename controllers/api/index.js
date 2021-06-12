@@ -1,12 +1,10 @@
 const router = require('express').Router();
-
-/* update these routes and routers to the relate to the 
-"new" routes" that will reside in the api directory too...*/
-
-const userRoutes = require('./userRoutes');
-/*const projectRoutes = require('./projectRoutes');*/
+const userRoutes = require('./user-routes');
+const postRoutes = require('./post-routes');
+const likeRoutes = require('./like-routes');
 
 router.use('/users', userRoutes);
-/*router.use('/projects', projectRoutes); */
+router.use('/posts', postRoutes);
+router.use('/posts', likeRoutes);
 
 module.exports = router;
