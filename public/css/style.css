@@ -1,0 +1,6 @@
+.thoughts {
+    display: flex;
+    position: absolute;
+    top: 13rem;
+    left: 25rem;
+}
