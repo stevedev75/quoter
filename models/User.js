@@ -48,18 +48,9 @@ User.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    /*
-    post_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    /*
-    comment_id: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    */
+
   },
+  
   {
     hooks: {
       beforeCreate: async (newUserData) => {
