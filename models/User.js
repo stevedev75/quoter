@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connections');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -11,7 +11,7 @@ class User extends Model {
 User.init(
   { 
     id: {
-      type: DataTypes.DECIMAL(16),
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false
@@ -44,22 +44,21 @@ User.init(
     },
 
     create_time: {
-      type: DataTypes.TIME,
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    /*
+    post_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
-
-    post_id1: {
+    /*
+    comment_id: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      autoIncrement: true,
     },
-
-    comment_id1: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      autoIncrement: true,
-    },
-
+    */
   },
   {
     hooks: {
