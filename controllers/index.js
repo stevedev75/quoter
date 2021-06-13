@@ -1,14 +1,8 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
 
 router.use('/api', apiRoutes);
-
-<<<<<<< HEAD
+router.use('/', homeRoutes);
 
 module.exports = router;
-
-
-
-=======
-module.exports = router;
->>>>>>> landingpage
