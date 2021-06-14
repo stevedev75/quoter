@@ -1,6 +1,5 @@
 async function likePost (event) {
     event.preventDefault()
-    
 } 
 
 async function dislikePost (event) {
