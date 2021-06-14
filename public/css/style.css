@@ -1,9 +1,9 @@
-.thought-btn {
-    display: flex !important;
-    justify-content: end !important;
+.body {
+    background-color: cadetblue;
 }
-
-.footer {
-    border-top: black !important;
-    border: thick !important;
+.thoughts {
+    display: flex;
+    position: absolute;
+    top: 13rem;
+    left: 25rem;
 }

@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header" id='mainPost' data-postId='{{post.id}}'>
+        {{post.user.userName}} {{post.date_created}}
+    </div>
+
+    <div class="card-body">
+        <p class="card=text">
+            {{post.content}}
+        </p>
+        {{#if isImg}}
+        <img src="" alt="">
+        {{/if}}
+    </div>
+
+    <div>
+        <button class="fas fa-comment-alt"></button>
+
+        {{#if liked}}
+        <button class="fas fa-hand-spock"></button>
+        {{else}}
+        <button class="far fa-hand-spock"></button>
+        {{/if}}
+
+        <button class= ""></button>
+    </div>
+</div>
