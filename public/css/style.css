@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-.body {
-    background-color: cadetblue;
-=======
-.thoughts {
-    display: flex;
-    position: absolute;
-    top: 13rem;
-    left: 25rem;
->>>>>>> landingpage
+.thought-btn {
+    display: flex !important;
+    justify-content: end !important;
+}
+
+.footer {
+    border-top: black !important;
+    border: thick !important;
 }
