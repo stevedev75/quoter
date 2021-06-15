@@ -1,9 +1,22 @@
-.body {
-    background-color: cadetblue;
+.quoter-menu {
+    margin-left: 5rem;
 }
-.thoughts {
+
+.sidebar {
     display: flex;
-    position: absolute;
-    top: 13rem;
-    left: 25rem;
+    align-items: flex-start;
+}
+.info-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border: none !important;
+    cursor: pointer !important;
+}
+
+button:hover {
+    background-color: rgb(78, 184, 178) !important;
+    transition: all 0.3s ease 0s !important;
 }
