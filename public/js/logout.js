@@ -10,3 +10,5 @@ async function logout() {
         alert(res.statusText);
     }
 }
+
+document.getElementById('logout-btn').addEventListener('click', logout);

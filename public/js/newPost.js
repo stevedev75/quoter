@@ -1,10 +1,11 @@
 async function createNewPost (event){
     event.preventDefault();
 
-    const content = document.getElementById('post-content').nodeValue.trim();
+    const content = document.getElementById('post-content').value.trim();
+    console.log(content);
 
     if (content) {
-        const res = await fetch('/api/posts', {
+        const res = await fetch('/api/posts/', {
             method: 'POST',
             body: JSON.stringify({content}),
             headers: {'content-type' : 'application/json'},
@@ -13,13 +14,13 @@ async function createNewPost (event){
         console.log(res);
 
         if(res.ok) {
-            document.location.replace('/homepage');
+            document.location.replace('/home');
         } else {
             alert('cannot create post');
         }
 
     } else {
-        alert ('please enter title');
+        alert ('please enter content');
     }
 
 }

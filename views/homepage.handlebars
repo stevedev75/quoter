@@ -1,5 +1,30 @@
-{{#each posts as |post|}}
-    <p>
-        {{post}}
-    </p>
-{{/each}}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+        {{>home-nav}}
+
+        </div>
+        <div class="col">
+        {{#each posts as |post|}}
+            <p>
+                {{>postcard}}
+            </p>
+        {{/each}}
+
+        </div>
+        <div class="col">
+        
+        {{>followers}}
+
+        </div>
+
+    </div>
+
+<div>
+
+
+
+
+
+

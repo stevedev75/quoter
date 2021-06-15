@@ -1,7 +1,7 @@
 async function editPost (event){
     event.preventDefault();
 
-    const content = document.getElementById('edit-content').nodeValue.trim();
+    const content = document.getElementById('edit-content').value.trim();
 
     if (content) {
         const res = await fetch('/api/posts', {
