@@ -10,7 +10,7 @@ router.get('/', async (req, res) =>{
     res.render('login');
 });
 
-router.get('/allpost', withAuth, async (req,res)=>{
+router.get('/all', withAuth, async (req,res)=>{
     try{
         const postData = await Post.findAll({
             include: [{ model: User, attributes: ['userName'],},],
@@ -18,9 +18,9 @@ router.get('/allpost', withAuth, async (req,res)=>{
         });
         //console.log(postData);
         const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(Posts);
+        console.log(posts);
 
-        res.render('allpost', {
+        res.render('all', {
             posts,
             logged_in: req.session.logged_in,
             dash: true,
