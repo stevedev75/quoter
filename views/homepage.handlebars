@@ -8,10 +8,12 @@
 
         </div>
         
-        <div class="col-8" style="overflow: auto;">
-        {{#each user.posts as |post|}}            
-            {{>userpostcard post}}
-        {{/each}}
+        <div class="col-8" style="overflow: auto; height: 100%">
+            <div> 
+            {{#each user.posts as |post|}}            
+                {{>userpostcard post}}
+            {{/each}}
+            </div>
 
         </div>
         

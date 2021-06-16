@@ -3,16 +3,16 @@
 
     <div class="row">
         <div class="col-2">
-
         {{>home-nav}}
-
         </div>
         
-        <div class="col-8" style="overflow: auto;">
-            
-        {{#each posts as |post|}}            
-            {{>postcard post}}
-        {{/each}}
+        <div class="col-8" style="overflow: auto; height: 100%">
+            <div>
+            {{#each posts as |post|}}            
+                {{>postcard post}}
+            {{/each}}
+
+            </div>
 
         <script src="./js/likes.js"></script>
         </div>
