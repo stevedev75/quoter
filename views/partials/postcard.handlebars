@@ -1,11 +1,11 @@
 <div class="card">
-    <div class="card-header" id='mainPost' data-postId='{{post.id}}'>
-        {{post.user.userName}} {{post.date_created}}
+    <div class="card-header" id='mainPost' data-postId='{{this.id}}'>
+        {{this.user.userName}} {{this.date_created}}
     </div>
 
     <div class="card-body">
         <p class="card=text">
-            {{post.content}}
+            {{this.content}}
         </p>
         {{#if isImg}}
         <img src="" alt="">

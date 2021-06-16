@@ -14,7 +14,7 @@ async function createNewPost (event){
         console.log(res);
 
         if(res.ok) {
-            document.location.replace('/home');
+            document.location.replace('/homepage');
         } else {
             alert('cannot create post');
         }
