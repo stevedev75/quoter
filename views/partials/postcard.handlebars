@@ -1,6 +1,6 @@
 <div class="card mb-3">
-    <div class="card-header" id='mainPost' data-postId='{{this.id}}'>
-        {{this.user.userName}} {{format_date this.date_created}}
+    <div class="card-header text-end" id='mainPost' data-postId='{{this.id}}'>
+        Quoted by {{this.user.userName}} on {{format_date this.date_created}}
     </div>
 
     <div class="card-body">
@@ -16,13 +16,14 @@
         <nav>
             <button class="fas fa-comment-alt"></button>
 
-            {{#if liked}}
-            <button class="fas fa-hand-spock"></button>
+            {{#if this.likes.length}}
+            <button class="fas fa-hand-spock unlike-btn" data-id='{{this.id}}'></button>
+            {{this.likes.length}}
             {{else}}
-            <button class="far fa-hand-spock"></button>
+            <button class="far fa-hand-spock like-btn" data-id='{{this.id}}' ></button>
             {{/if}}
 
-            <button class= ""> <span class="fas fa-angle-double-left"></span> <span class="fas fa-angle-double-right"></span></button>
+            <button> <span class="fas fa-angle-double-left"></span> <span class="fas fa-angle-double-right"></span></button>
         </nav>
     </div>
 </div>

@@ -13,11 +13,25 @@ router.get('/', async (req, res) =>{
 router.get('/all', withAuth, async (req,res)=>{
     try{
         const postData = await Post.findAll({
-            include: [{ model: User, attributes: ['userName'],},],
+            include: [
+                { 
+                    model: User,
+                    attributes: ['userName'],
+                },
+                {
+                    model: Like,
+                    where: {
+                        user_id: req.session.user_id,
+                    },
+                    attributes: ['id'],
+                    required: false,
+                }
+            ],
             order: [['date_created', 'DESC']],
         });
         //console.log(postData);
         const posts = postData.map((post) => post.get({ plain: true }));
+        console.log('=====================getALL===================');
         console.log(posts);
 
         res.render('all', {
@@ -40,6 +54,7 @@ router.get('/post/:id', async (req, res) =>{
                     model: User, 
                     attributes: ['userName'],
                 },
+                /*
                 {
                     model: Like,
                     include: [
@@ -49,14 +64,15 @@ router.get('/post/:id', async (req, res) =>{
                         },
                     ],                    
                    // order: [['date_created','DESC']],
-                },
+                },*/
             ] ,  
 
         });
         const post = postData.get({ plain: true});
-        //console.log(post);
+        console.log("===================editpost=====================")
+        console.log(post);
 
-        res.render('post', {
+        res.render('editpost', {
             post,
             logged_in: req.session.logged_in
         });
@@ -113,6 +129,7 @@ router.get('/editpost/:id', withAuth, async (req, res) =>{
             ],
         });
         const post = postData.get({ plain: true});
+
         res.render('editpost', {
             post,
             logged_in: req.session.logged_in,
