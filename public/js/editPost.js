@@ -9,17 +9,15 @@ async function editPost (event){
             body: JSON.stringify({content}),
             headers: {'content-type' : 'application/json'},
         });
-
-        console.log(res);
-
+        
         if(res.ok) {
             document.location.replace('/homepage');
         } else {
-            alert('cannot create post');
+            alert('cannot create Quote');
         }
 
     } else {
-        alert ('please enter title');
+        alert ('Quote cannot be empty');
     }
 
 }
