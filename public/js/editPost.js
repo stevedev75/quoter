@@ -1,25 +1,46 @@
-async function editPost (event){
+async function editPost(event) {
     event.preventDefault();
 
-    const content = document.getElementById('edit-content').value.trim();
+    const id = parseInt(document.querySelector('.edit-post').getAttribute('data-id'));
+    const content = document.querySelector('#post-content').value.trim();    
 
-    if (content) {
-        const res = await fetch('/api/posts', {
+    if(content && id){
+        const res = await fetch(`/api/posts/${id}`, {
             method: 'PUT',
-            body: JSON.stringify({content}),
-            headers: {'content-type' : 'application/json'},
+            body: JSON.stringify({ content }),
+            headers: {'Content-type': 'application/json'},
         });
-        
-        if(res.ok) {
+
+        if (res.ok) {
             document.location.replace('/homepage');
-        } else {
-            alert('cannot create Quote');
+        }
+        else {
+            alert('Cannot update Quote');
         }
 
-    } else {
-        alert ('Quote cannot be empty');
+    }else {
+        alert('Quote can not be empty');
+    }
+}
+
+async function deletePost() {
+
+    const id = document.querySelector('#btndelete').getAttribute('data-id');
+
+    if (id) {
+        const res = await fetch(`/api/posts/${id}`, {
+            method: 'DELETE',
+        });
+
+        if(res.ok) {
+            document.location.replace('/homepage');
+        }else {
+            alert(`unable to delete post ${id}`);
+        }
     }
 
 }
 
-document.getElementById('edit-post').addEventListener('submit', createNewPost);
+
+document.querySelector('.edit-post').addEventListener('submit', editPost);
+document.querySelector("#btndelete").addEventListener('click', deletePost);

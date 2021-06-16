@@ -1,0 +1,34 @@
+<div class="card mb-3">
+    <div class="card-header" id='mainPost' data-postId='{{this.id}}'>
+        <div class="card-title text-end">
+            <p>
+                Created by you on {{format_date this.date_created}}
+            </p>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <p class="card=text">
+            {{this.content}}
+        </p>
+        {{#if isImg}}
+        <img src="" alt="">
+        {{/if}}
+
+
+    </div>
+
+    <div class="card-footer">
+
+        <button class="fas fa-comment-alt"></button>
+         
+        {{#if liked}}
+        <button class="fas fa-hand-spock"></button>
+        {{else}}
+        <button class="far fa-hand-spock"></button>
+        {{/if}}
+
+        <a href="post/{{this.id}}"  class="fas fa-pen-nib"></a>           
+       
+    </div>
+</div>

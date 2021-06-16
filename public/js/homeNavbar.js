@@ -38,6 +38,13 @@ async function createNewPost (event){
 
 }
 
+
+async function unlikeQuote (event) {
+
+}
+
 document.getElementById('new-post').addEventListener('submit', createNewPost);
 
-dobument.getElementById('logout-link').addEventListener('click', logout);
+document.getElementById('logout-link').addEventListener('click', logout);
+
+

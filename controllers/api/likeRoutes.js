@@ -28,7 +28,7 @@ router.post('/', withAuth, async (req, res)=>{
 });
 
 router.delete('/:id', withAuth, async (req, res) =>{
-    try {
+    try {        
         const like = await Like.destroy({
             where:{
                 post_id: req.params.id,
@@ -39,6 +39,8 @@ router.delete('/:id', withAuth, async (req, res) =>{
         if(!like) {
             res.status(404).json({ message: `You didn't liked this quoter.`});
         }
+
+        res.status(200).json(like);
     } catch (err) {
         res.status(400).json(err);
     }
