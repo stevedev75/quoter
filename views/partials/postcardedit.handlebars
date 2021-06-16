@@ -1,0 +1,22 @@
+<div class="card mb-3">
+    <div class="card-header text-center px-2">
+        <h2 class="text-dark">Edit post</h2>  
+    </div>
+    
+    <div class="card-body">
+        <form class="edit-post" data-id="{{post.id}}">
+            <div class="form-group px-5" data-id="{{post.id}}">
+                <label for="post-content">Quotes</label>
+                <textarea class="form-control" name="post-content" id="post-content" value="{{post.content}}" cols="30" rows="10">
+                {{post.content}}
+                </textarea>
+            </div>
+            <div class="d-flex justify-content-evenly">
+                <button class="btn btn-success btn-block px-5 py-3" type="submit">Update Quote</button>
+                <button class="btn btn-danger btn-block px-5 py-3" data-id="{{post.id}}" id="btndelete">Delete post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/editpost.js"></script>
