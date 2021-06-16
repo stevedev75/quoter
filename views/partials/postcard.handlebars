@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card mb-3">
     <div class="card-header" id='mainPost' data-postId='{{this.id}}'>
-        {{this.user.userName}} {{this.date_created}}
+        {{this.user.userName}} {{format_date this.date_created}}
     </div>
 
     <div class="card-body">
@@ -12,15 +12,17 @@
         {{/if}}
     </div>
 
-    <div>
-        <button class="fas fa-comment-alt"></button>
+    <div class="card-footer">
+        <nav>
+            <button class="fas fa-comment-alt"></button>
 
-        {{#if liked}}
-        <button class="fas fa-hand-spock"></button>
-        {{else}}
-        <button class="far fa-hand-spock"></button>
-        {{/if}}
+            {{#if liked}}
+            <button class="fas fa-hand-spock"></button>
+            {{else}}
+            <button class="far fa-hand-spock"></button>
+            {{/if}}
 
-        <button class= ""></button>
+            <button class= ""> <span class="fas fa-angle-double-left"></span> <span class="fas fa-angle-double-right"></span></button>
+        </nav>
     </div>
 </div>
