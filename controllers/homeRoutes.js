@@ -2,7 +2,15 @@ const router = require('express').Router();
 const { User, Post, Like } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req,res)=>{
+router.get('/', async (req, res) =>{
+    if(req.session.logged_in) {
+        res.redirect('/userhome');
+        return;
+    }
+    res.render('login');
+});
+
+router.get('/allpost', withAuth, async (req,res)=>{
     try{
         const postData = await Post.findAll({
             include: [{ model: User, attributes: ['userName'],},],
@@ -10,10 +18,11 @@ router.get('/', async (req,res)=>{
         });
         //console.log(postData);
         const posts = postData.map((post) => post.get({ plain: true }));
-        //console.log(allPosts);
-        res.render('home', {
+        console.log(Posts);
+        res.render('allpost', {
             posts,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            dash: true,
         });
 
     } catch (err) {
@@ -55,7 +64,7 @@ router.get('/post/:id', async (req, res) =>{
     }
 });
 
-router.get('/home', withAuth, async (req, res) => {
+router.get('/homepage', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk( req.session.user_id, {
             attributes: {exclude: ['password']},
@@ -115,7 +124,7 @@ router.get('/editpost/:id', withAuth, async (req, res) =>{
 
 router.get('/login', (req, res) => {
     if(req.session.logged_in) {
-        res.redirect('/dashboard');
+        res.redirect('/userhome');
         return;
     }
     res.render('login');
@@ -123,7 +132,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
     if(req.session.logged_in) {
-        res.redirect('/dashboard');
+        res.redirect('/userhome');
         return;
     }
     res.render('signup');

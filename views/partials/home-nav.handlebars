@@ -1,10 +1,30 @@
-<div>
-    this is a home nav bar
+<nav>
 
-    <button type="click" id=""></button>
-    <a href="/newpost">create new post</a>
+    <ul class="nav flex-colum navbar col-1 nav">
+        <li>
+            <a class="navbar-brand" href="/homepage">Home</a>
+        </li>
+        <li>
+             <a class="navbar-brand" href="#">Followers</a>
+        </li>
+        <li>
+            <a class="navbar-brand" href="/allpost">Current</a>
+        </li>
+        <li>
+            <form>
+                <label class="navbar-brand" href="#">Search</a>
+                <input class="search-form" style="border-color: white;">                
+            </form>
+        </li>
+        <li>
+             <a href="/newpost" >Quote</a>
+        </li>
+
+        <li>
+            <button id="logout-btn">logout</button>
+        </li>
+    </ul>
 
 
-    <button id="logout-btn">logout</button>
-</div>
     <script src="./js/logout.js"></script>
+</nav>

@@ -14,7 +14,7 @@ async function signup (event) {
         });
 
         if(res.ok) {
-            document.location.replace('/home');
+            document.location.replace('/homepage');
         }else{
             alert(res.statusText);
         }
