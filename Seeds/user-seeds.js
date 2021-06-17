@@ -11,28 +11,28 @@ const userData = [
     {
         username: 'Joe',
         email: 'joe@gmail.com',
-        password: 'password2',
+        password: 'password1',
 
     },
 
     {
         username: 'Nick',
         email: 'nick@gmail.com',
-        password: 'password3',
+        password: 'password1',
 
     },
 
     {
         username: 'Ant',
         email: 'ant@gmail.com',
-        password: 'password4',
+        password: 'password1',
 
     },
 
     {
         username: 'Kevin',
         email: 'kevin@gmail.com',
-        password: 'password5',
+        password: 'password1',
 
     },
 ];
