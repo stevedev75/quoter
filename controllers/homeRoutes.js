@@ -52,17 +52,7 @@ router.get('/post/:id', async (req, res) =>{
                     model: User, 
                     attributes: ['userName'],
                 },
-                /*
-                {
-                    model: Like,
-                    include: [
-                        {
-                            model: User,
-                            attributes: ['userName'],
-                        },
-                    ],                    
-                   // order: [['date_created','DESC']],
-                },*/
+
             ] ,  
 
         });
@@ -90,7 +80,7 @@ router.get('/homepage', withAuth, async (req, res) => {
         })
 
         const user = userData.get({plain: true });
-        console.log(user);
+
 
         res.render('homepage', {
             user,

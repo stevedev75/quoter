@@ -36,7 +36,7 @@ Post.init(
                 key: 'id',
             }
         },
-        /*
+        /* for future developments
         post_id:{
             type: DataTypes.INTEGER,
             allowNull: true, 
