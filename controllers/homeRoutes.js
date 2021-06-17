@@ -29,10 +29,8 @@ router.get('/all', withAuth, async (req,res)=>{
             ],
             order: [['date_created', 'DESC']],
         });
-        //console.log(postData);
         const posts = postData.map((post) => post.get({ plain: true }));
-        console.log('=====================getALL===================');
-        console.log(posts);
+
 
         res.render('all', {
             posts,
@@ -69,8 +67,6 @@ router.get('/post/:id', async (req, res) =>{
 
         });
         const post = postData.get({ plain: true});
-        console.log("===================editpost=====================")
-        console.log(post);
 
         res.render('editpost', {
             post,
