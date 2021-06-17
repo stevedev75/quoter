@@ -17,7 +17,8 @@ Please see the URL to the GitHub repository for this application:
 https://github.com/stevedev75/quoter
 
 Please see the URL to the deployed web application below:
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+
+https://protected-garden-67458.herokuapp.com/login
 
 Copyright (c) 2021 Kevin Zheng , Nicholas Long, and Stephen Dever
 
