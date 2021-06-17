@@ -26,7 +26,7 @@ router.post('/login', async (req, res) =>{
         }
 
         const valiPass = await userData.checkPassword(req.body.password);
-        //console.log("valipass = "+ valiPass);
+    
         if(!valiPass){
             res.status(400).json({message: 'Incorrect email or password.'});
             return;

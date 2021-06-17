@@ -5,8 +5,7 @@ const withAuth = require('../../utils/auth');
 //create new post
 router.post('/', withAuth, async (req, res) =>{
     try {
-        //console.log(req.body);
-        //console.log(req.session.user_id);
+
         const newPost = await Post.create({
             ...req.body,
             user_id: req.session.user_id,
@@ -27,7 +26,7 @@ router.put('/:id', withAuth, async (req, res) =>{
                 user_id: req.session.user_id,
             }
         });
-        //console.log(postData);
+      
         if(!postData) {
             res.status(404).json({message: 'No post found with this id.'});
             return;

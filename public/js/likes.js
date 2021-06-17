@@ -3,7 +3,6 @@ async function likeQuote (event) {
     event.preventDefault();
 
     const post_id = parseInt(event.target.getAttribute('data-id'));
-    console.log(post_id);
     
     if(post_id){
         const res = await fetch('/api/likes/', {
@@ -22,7 +21,6 @@ async function unlikeQuote (event) {
     event.preventDefault();
 
     const post_id = parseInt(event.target.getAttribute('data-id'));
-    console.log(post_id);
     
     if(post_id){
         const res = await fetch(`/api/likes/${post_id}`, {
