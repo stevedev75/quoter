@@ -8,7 +8,7 @@ async function createNewPost (event){
         const res = await fetch('/api/posts/', {
             method: 'POST',
             body: JSON.stringify({content}),
-            headers: {'content-type' : 'application/json'},
+            headers: {'Content-type' : 'application/json'},
         });
 
         console.log(res);
